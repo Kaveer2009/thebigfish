@@ -1,0 +1,95 @@
+img{
+  height: 100%;
+  width: 100%;
+}
+
+#artize img{
+    margin: -3px;
+    width: 100%;
+}
+
+#jaguar img{
+    margin: -3px;
+    width: 100%;
+}
+
+#inst img{
+    margin: -3px;
+    width: 100%;
+}
+
+#icon{
+    float: left;
+    margin-top: 0px;
+}
+
+#sonyCenter img{
+    margin: -3px;
+    width: 100%;
+}
+
+#sonyMdr img{
+    margin: -3px;
+    width: 100%;
+}
+
+#sonyAlfa img{
+    margin: -3px;
+    width: 100%;
+}
+
+#maxxisTyre img{
+    margin: -3px;
+    width: 100%;
+}
+
+#hindWare img{
+    margin: -3px;
+    width: 100%;
+}
+
+#intel img{
+    margin: -3px;
+    width: 100%;
+}
+
+#samsung img{
+    margin: -3px;
+    width: 100%;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+#backonshop{
+  font-size: 40px;
+}
+#fb_kr i, #ig_kr i, #lk_kr i{
+  font-size: 40px;
+}
+
+#fb_kr i:hover, #ig_kr i:hover, #lk_kr i:hover{
+  font-size: 40px;
+  color: dodgerblue;
+  transition: 0.3s;
+}
+
+#brand_footer, #copyright_footer{
+  color: white;
+  text-align: center;
+}
+
+#copyright_footer{
+  margin-bottom: 0px;
+}
+
+#carouselExampleIndicators{
+  margin-top: 55px;
+}
+
+#footer_site{
+  height: 150px;
+  margin-right: 18px;
+  margin-left: 12px;
+}
