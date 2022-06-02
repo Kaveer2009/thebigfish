@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>THE BIGFISH | BUY 0001</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+</head>
+<body>
+    <style>
+        #backbuy{
+            font-size: 40px;
+            color: gray;
+            margin-left: 40px;
+            margin-top: 25px;
+        }
+
+        #backbuy:hover{
+            color: black;
+            transition: 0.5s;
+        }
+        
+        /* #btn-red{
+            margin-right: 10px;
+        } */
+
+        #heading, center{
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+        }
+    </style>
+    <a href="shopnow_0001.html" id="backbuy"><i class="fa fa-arrow-left"></i></a>
+
+    <center>
+    <h1 class="heading" id="heading">
+        
+    </h1>
+
+    <div class="container">
+    <div class="form-group">
+        <label>Name :</label>
+        <input type="text" class="form-control" id="p_name">
+    </div>
+    <div class="form-group">
+        <label>(+91)Phone No :</label>
+        <input type="number" class="form-control" id="p_phone">
+    </div>
+    <div class="form-group">
+        <label>E - Mail :</label>
+        <input type="email" class="form-control" id="p_email">
+    </div>
+    <div class="form-group">
+        <label>Address :</label>
+        <input type="text" class="form-control" id="p_address">
+    </div>
+    <div class="form-group">
+        <label>Date :</label>
+        <input type="text" class="form-control" id="p_date">
+    </div>
+    <div class="form-group">
+        <label>Quantity :</label>
+        <input type="number" class="form-control" id="p_quantity">
+    </div>
+    <div class="form-group">
+        
+        <label>Pay on Delivery method is ony available now.</label>
+        
+        
+
+    </div>
+    <button onclick="ordering()" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="left" title="Click on this button to order">
+        Order Now
+    </button>
+    
+    </div>
+    
+    
+    </center>  
+    <script src="buy.js"></script>
+
+    <script>
+        Order_head_set = localStorage.getItem("Order_name");
+        document.getElementById("heading").innerHTML = Order_head_set;  
+
+
+        //firebase links
+        var firebaseConfig = {
+                apiKey: "AIzaSyCZBWnYlII7deGcr8auHxi6ukMbuKki0i0",
+                authDomain: "the-big-fish-b3445.firebaseapp.com",
+                databaseURL: "https://the-big-fish-b3445-default-rtdb.firebaseio.com/",
+                projectId: "the-big-fish-b3445",
+                storageBucket: "the-big-fish-b3445.appspot.com",
+                messagingSenderId: "44348757949",
+                appId: "1:44348757949:web:cf2a3df67b1b4a6060e4d4"
+            };
+
+            // Initialize Firebase
+            // const app = initializeApp(firebaseConfig);
+            firebase.initializeApp(firebaseConfig);
+
+
+
+
+            function ordering() {
+                var p_head = "New order from "+document.getElementById("p_name").value+" on "+document.getElementById("p_date").value;
+                    firebase.database().ref("/").child(p_head).update({
+                        purpose: "New Order",
+                        quantity: document.getElementById("p_quantity").value,
+                        date: document.getElementById("p_date").value,
+                        email: document.getElementById("p_email").value,
+                        phone_no: document.getElementById("p_phone").value,
+                        name: document.getElementById("p_name").value,
+                        order: Order_head_set
+                    });
+                    window.location="afterorder.html";
+                }
+
+        // tooltip Start
+        $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            }); 
+            //tooltip End
+    </script>
+</body>
+</html>
