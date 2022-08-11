@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIENT - AREA</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.9.2/firebase-app.js" integrity="sha512-VKz8FDjgw99Fu8fU2LC+IRA7Ri2sLFFXCFMddO+UgKxn17cTTo5XSFwNDoEiARTjMPvVaUG1W7KI5oRGYpFgow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3">CLIENT AREA</h1>
+
+          <h5><a href="index.html"><-BACK</a></h5>
+        </div>
+      </div>
+      <div class="container">
+        <input id="order_name" type="text" class="form-control">
+        <button class="btn btn-success"  onclick="addOrder()">ADD ORDERS</button>
+      </div>
+      <div class="container"><h3>Orders recieved till now:-</h3></div>
+      <!-- responsive equal width cols, can be sm, md, lg, or xl -->
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-sm">----</div>
+      <div class="col-sm">----</div>
+      <div class="col-sm">----</div>
+    </div>
+  </div> -->
+
+  <div id="output">
+    <!-- here the orders will be displayed -->
+  </div>
+  <script src="app1.js"></script>
+</body>
+</html>

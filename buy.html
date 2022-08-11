@@ -66,7 +66,7 @@
     </div>
     <div class="form-group">
         <label>Date :</label>
-        <input type="text" class="form-control" id="p_date">
+        <input type="date" class="form-control" id="p_date">
     </div>
     <div class="form-group">
         <label>Quantity :</label>
@@ -115,12 +115,12 @@
 
 
             function ordering() {
-                var p_head = "New order from "+document.getElementById("p_name").value+" on "+document.getElementById("p_date").value;
-                    firebase.database().ref("/").child(p_head).update({
+                var p_head = "Order-from-"+document.getElementById("p_name").value+"-on-"+document.getElementById("p_date").value;
+                    firebase.database().ref("/").child(p_head).push({
                         purpose: "New Order",
                         quantity: document.getElementById("p_quantity").value,
-                        date: document.getElementById("p_date").value,
                         email: document.getElementById("p_email").value,
+                        address: document.getElementById("p_address").value,
                         phone_no: document.getElementById("p_phone").value,
                         name: document.getElementById("p_name").value,
                         order: Order_head_set

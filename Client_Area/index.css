@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+}
+
+#output
+{
+	padding: 10px; 
+    width:80%;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+}
+
+.order_name{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#heading{
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 60px;
+    color: white;
+}
+
+#user_logo{
+    text-align: center;
+    font-size: 100px;
+}
+
+#inf{
+    font-size: 15px;
+}
+
+
