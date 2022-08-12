@@ -46,3 +46,9 @@ function getData() { firebase.database().ref("/"+ordername).on('value', function
  } });  }); }
 
  getData();
+
+//  function open_order() {
+//   if ("Amaze Shoppe Wooden Table (Item Code - 0001)" === uorder) {
+//     window.location="";
+//   }
+//  }

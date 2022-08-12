@@ -32,4 +32,14 @@ body{
     font-size: 15px;
 }
 
+.open_order{
+    text-align: center;
+}
 
+.btn_{
+    margin-top: 20px;
+}
+
+.i{
+    margin-left: 20px;
+}
