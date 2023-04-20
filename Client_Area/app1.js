@@ -15,7 +15,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 // firebase links ends
 
-var code = "staff_of_tbf";
+var code = "jayantika";
 
 
 function check(){

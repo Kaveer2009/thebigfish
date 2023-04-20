@@ -79,11 +79,13 @@
         
 
     </div>
-    <button onclick="ordering()" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="left" title="Click on this button to order">
-        Order Now
-    </button>
+    <button onclick="ordering()" id="order_btn" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="left" title="Click on this button to order">
+        Order Now <div id="load"></div>
+    
     
     </div>
+    </button>
+    
     
     
     </center>  
@@ -115,6 +117,7 @@
 
 
             function ordering() {
+                document.getElementById("load").innerHTML = "<div class='spinner-border spinner-border-sm' role='status'><span class='sr-only'>Loading...</span></div>"
                 var p_head = "Order-from-"+document.getElementById("p_name").value+"-on-"+document.getElementById("p_date").value;
                     firebase.database().ref("/").child(p_head).push({
                         purpose: "New Order",
@@ -125,12 +128,16 @@
                         name: document.getElementById("p_name").value,
                         order: Order_head_set
                     });
-
+                    
                     for (let i = 1; i <= 5; i++) {
                     setTimeout(() =>  window.location = "afterorder.html", 3000);
+                    
+                    
+                    
                 }
                     
                     //  window.location="afterorder.html";
+                    
                     
                 }
 

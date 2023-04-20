@@ -36,5 +36,12 @@ function buy_0001(){
     
 }
 
+function buy_0002(){
+  Order_head = "example(Item Code - 0002)";
+  localStorage.setItem("Order_name", Order_head);
+  // Order_head_set = localStorage.getItem("Order_name");
+  
+}
+
 
 
