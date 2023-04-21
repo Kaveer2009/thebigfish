@@ -48,10 +48,13 @@
     </h1>
 
     <div class="container">
-    <div class="form-group">
-        <label>Name :</label>
-        <input type="text" class="form-control" id="p_name">
-    </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">First and last name</span>
+            </div>
+            <input type="text" aria-label="First name" id="p_name" class="form-control">
+            <input type="text" aria-label="Last name" id="p_name2" class="form-control">
+          </div>
     <div class="form-group">
         <label>(+91)Phone No :</label>
         <input type="number" class="form-control" id="p_phone">
@@ -74,7 +77,19 @@
     </div>
     <div class="form-group">
         
-        <label>Pay on Delivery method is ony available now.</label>
+        <!-- <label>Pay on Delivery method is ony available now.</label> -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Pay on Dilevry
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+            <label class="form-check-label" for="defaultCheck2">
+              Pay Online (COMING SOON!)
+            </label>
+          </div>
     
         
 
@@ -88,8 +103,10 @@
     
     
     
+    
     </center>  
     </div>
+    <!-- <button onclick="tr()">check</button> -->
     <script src="buy.js"></script>
 
     <script>
@@ -118,14 +135,14 @@
 
             function ordering() {
                 document.getElementById("load").innerHTML = "<div class='spinner-border spinner-border-sm' role='status'><span class='sr-only'>Loading...</span></div>"
-                var p_head = "Order-from-"+document.getElementById("p_name").value+"-on-"+document.getElementById("p_date").value;
+                var p_head = "Order-from-"+document.getElementById("p_name").value+"-"+document.getElementById("p_name2").value+"-on-"+document.getElementById("p_date").value;
                     firebase.database().ref("/").child(p_head).push({
                         purpose: "New Order",
                         quantity: document.getElementById("p_quantity").value,
                         email: document.getElementById("p_email").value,
                         address: document.getElementById("p_address").value,
                         phone_no: document.getElementById("p_phone").value,
-                        name: document.getElementById("p_name").value,
+                        name: document.getElementById("p_name").value+"-"+document.getElementById("p_name2").value,
                         order: Order_head_set
                     });
                     
@@ -140,6 +157,9 @@
                     
                     
                 }
+                // function tr() {
+                //     console.log("Order-from-"+document.getElementById("p_name").value+"-"+document.getElementById("p_name2").value+"-on-"+document.getElementById("p_date").value);
+                // }
 
         // tooltip Start
         $(function () {
