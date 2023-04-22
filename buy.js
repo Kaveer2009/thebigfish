@@ -43,5 +43,11 @@ function buy_0002(){
   
 }
 
+document.getElementById("p_name").value = localStorage.getItem("acc_name1");
+document.getElementById("p_name2").value = localStorage.getItem("acc_name2");
+document.getElementById("p_email").value = localStorage.getItem("acc_email");
+document.getElementById("p_phone").value = localStorage.getItem("acc_mob");
+document.getElementById("p_address").value = localStorage.getItem("acc_address");
+
 
 
